@@ -1,5 +1,19 @@
-<div class="container">
-  <div fxLayout="row" fxLayoutAlign="center center" class="content">
-    <mat-card>Simple card</mat-card>
-  </div>
-</div>
+<mat-card-content>
+
+  <mat-list>
+    <mat-list-item *ngFor="let post of dataSource">
+
+      <img matListAvatar src="{{post.image}}" alt="...">
+      <h3 matLine> {{post.title}} </h3>
+      <p matLine>
+        <span> {{post.category}} </span>
+      </p>
+      <p matLine>
+        <span class="demo-2"> {{post.body}} </span>
+      </p>
+
+    </mat-list-item>
+  </mat-list>
+
+
+</mat-card-content>

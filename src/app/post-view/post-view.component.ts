@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Post } from '../Post';
+import { PostServiceService } from '../services/post-service.service';
 
 
 @Component({
@@ -8,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostViewComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private postServiceService: PostServiceService) {
+    this.LoandPost();
+  }
 
   ngOnInit(): void {
   }
 
+  dataSource: Post[] =[];
+
+  public LoandPost(){
+  this.postServiceService.connect().subscribe(p => {
+    this.dataSource = p
+ });
+}
 }

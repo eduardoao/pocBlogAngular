@@ -6,12 +6,12 @@ import {Observable, of} from 'rxjs';
 export class DataFakeService {
 
   ELEMENT_DATA: Post[] = [
-    {position: 0, title: 'Post One', category: 'Web Development', date_posted: new Date(), body: 'Body 1'},
-    {position: 1, title: 'Post Two', category: 'Android Development', date_posted: new Date(), body: 'Body 2'},
-    {position: 2, title: 'Post Three', category: 'IOS Development', date_posted: new Date(), body: 'Body 3'},
-    {position: 3, title: 'Post Four', category: 'Android Development', date_posted: new Date(), body: 'Body 4'},
-    {position: 4, title: 'Post Five', category: 'IOS Development', date_posted: new Date(), body: 'Body 5'},
-    {position: 5, title: 'Post Six', category: 'Web Development', date_posted: new Date(), body: 'Body 6'},
+    {position: 0, title: 'Post One', category: 'Web Development', date_posted: new Date(), body: 'Body 1', image: 'src="./../../assets/image/angularjs-icon-1.jpg'},
+    {position: 1, title: 'Post Two', category: 'Android Development', date_posted: new Date(), body: 'Body 2', image: 'src="./../../assets/image/angularjs-icon-1.jpg'},
+    {position: 2, title: 'Post Three', category: 'IOS Development', date_posted: new Date(), body: 'Body 3', image: 'src="./../../assets/image/angularjs-icon-1.jpg'},
+    {position: 3, title: 'Post Four', category: 'Android Development', date_posted: new Date(), body: 'Body 4', image: 'src="./../../assets/image/angularjs-icon-1.jpg'},
+    {position: 4, title: 'Post Five', category: 'IOS Development', date_posted: new Date(), body: 'Body 5', image: 'src="./../../assets/image/angularjs-icon-1.jpg'},
+    {position: 5, title: 'Post Six', category: 'Web Development', date_posted: new Date(), body: 'Body 6', image: 'src="./../../assets/image/angularjs-icon-1.jpg'},
   ];
   categories = [
     {value: 'Web-Development', viewValue: 'Web Development'},

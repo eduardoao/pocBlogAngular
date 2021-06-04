@@ -19,7 +19,7 @@ export class DashboardComponent {
   }
 
   displayedColumns = ['date_posted', 'title', 'category', 'delete'];
-  dataSource = this.postServiceService.connect();  //new PostDataSource(this.dataService);
+  dataSource = this.postServiceService.connect();  
 
   deletePost(id: number) {
     if (this.auth.isAuthenticated()) {
