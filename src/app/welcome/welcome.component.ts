@@ -1,5 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
 
+import {DataFakeService} from '../data/datafake.service';
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dataService: DataFakeService) {
+
+   }
 
   ngOnInit(): void {
   }

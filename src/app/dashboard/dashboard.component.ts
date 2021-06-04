@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DataService} from '../data/data.service';
+import {DataFakeService} from '../data/datafake.service';
 import {Post} from '../Post';
 import {DataSource} from '@angular/cdk/table';
 import {Observable} from 'rxjs';
@@ -7,6 +7,7 @@ import { AuthService } from '../auth.service';
 
 import {PostDialogComponent} from '../post-dialog/post-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
+import { PostServiceService } from '../services/post-service.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,16 +15,16 @@ import {MatDialog} from '@angular/material/dialog';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(public auth: AuthService, public dialog: MatDialog, private dataService: DataService) {
+  constructor(public auth: AuthService, public dialog: MatDialog, private postServiceService: PostServiceService) {
   }
 
   displayedColumns = ['date_posted', 'title', 'category', 'delete'];
-  dataSource = new PostDataSource(this.dataService);
+  dataSource = this.postServiceService.connect();  //new PostDataSource(this.dataService);
 
   deletePost(id: number) {
     if (this.auth.isAuthenticated()) {
-      this.dataService.deletePost(id);
-      this.dataSource = new PostDataSource(this.dataService);
+      this.postServiceService.deletePost(id);
+      this.dataSource = this.postServiceService.connect();
     } else {
       alert('Login in Before');
     }
@@ -35,15 +36,15 @@ export class DashboardComponent {
       data: 'Add Post'
     });
     dialogRef.componentInstance.event.subscribe((result) => {
-      this.dataService.addPost(result.data);
-      this.dataSource = new PostDataSource(this.dataService);
+      this.postServiceService.addPost(result.data);
+      this.dataSource = this.postServiceService.connect();
     });
   }
 }
 
 export class PostDataSource extends DataSource<any> {
   [x: string]: any;
-  constructor(private dataService: DataService) {
+  constructor(private dataService: DataFakeService) {
     super();
   }
 

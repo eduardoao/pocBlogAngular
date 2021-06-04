@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {DataService} from '../data/data.service';
+import {DataFakeService} from '../data/datafake.service';
 
 @Component({
   selector: 'app-post-dialog',
@@ -20,7 +20,7 @@ export class PostDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<PostDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public dataService: DataService
+    public dataService: DataFakeService
   ) {
   }
 

@@ -13,10 +13,13 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRouters } from './app.routes';
-import { DataService } from './data/data.service';
+import { DataFakeService } from './data/datafake.service';
 import { AuthService } from './auth.service';
 import { PostDialogComponent } from './post-dialog/post-dialog.component';
 import { FooterComponent } from './footer/footer.component';
+import { PostViewComponent } from './post-view/post-view.component';
+
+import { PostServiceService } from './services/post-service.service';
 
 
 @NgModule({
@@ -25,7 +28,8 @@ import { FooterComponent } from './footer/footer.component';
     WelcomeComponent,
     DashboardComponent,
     PostDialogComponent,
-    FooterComponent
+    FooterComponent,
+    PostViewComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,7 @@ import { FooterComponent } from './footer/footer.component';
     AppRouters,
     FormsModule
   ],
-  providers: [DataService, AuthService],
+  providers: [DataFakeService, AuthService, PostServiceService],
   bootstrap: [AppComponent],
   entryComponents: [
     PostDialogComponent

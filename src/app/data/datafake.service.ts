@@ -3,7 +3,7 @@ import {Post} from '../Post';
 import {Observable, of} from 'rxjs';
 
 @Injectable()
-export class DataService {
+export class DataFakeService {
 
   ELEMENT_DATA: Post[] = [
     {position: 0, title: 'Post One', category: 'Web Development', date_posted: new Date(), body: 'Body 1'},
