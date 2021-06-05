@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataFakeService } from '../data/datafake.service';
-import { Post } from '../Post';
+import { Post } from '../model/Post';
 
 @Injectable({
   providedIn: 'root'

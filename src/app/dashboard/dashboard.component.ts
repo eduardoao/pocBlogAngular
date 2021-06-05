@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {DataFakeService} from '../data/datafake.service';
-import {Post} from '../Post';
+import {Post} from '../model/Post';
 import {DataSource} from '@angular/cdk/table';
 import {Observable} from 'rxjs';
 import { AuthService } from '../auth.service';
@@ -19,7 +19,7 @@ export class DashboardComponent {
   }
 
   displayedColumns = ['date_posted', 'title', 'category', 'delete'];
-  dataSource = this.postServiceService.connect();  
+  dataSource = this.postServiceService.connect();
 
   deletePost(id: number) {
     if (this.auth.isAuthenticated()) {
